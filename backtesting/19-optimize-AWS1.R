@@ -4,7 +4,8 @@ suppressMessages(library(SharpeR))
 data_source <- "~/printing-press-data/av/data/success/"
 
 #Load Custom Functions
-source("~/printing-press/backtesting/_functions.R")
+my_functions <- getURL("https://raw.githubusercontent.com/JoeOD/miranda/master/backtesting/_functions.R", ssl.verifypeer = FALSE)
+eval(parse(text = my_functions))
 
 #Enable Parallel Processing
 library(parallel)
