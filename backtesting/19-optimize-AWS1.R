@@ -36,7 +36,8 @@ toDate <- function(x) as.Date(x, origin = "1899-12-30")
 date_range = paste(start_date, end_date, sep = "/")
 
 # Prep and Pull Custom Data
-dataCSV <- read.zoo(text=getURL("https://raw.githubusercontent.com/perfeci/printing-press-data/master/av/data/success/a.csv?token=AY-o9eyFSA4owC5dBf7o9TGUZS10KZLJks5avDBdwA%3D%3D"), header = TRUE, sep = ",", FUN = toDate)
+#dataCSV <- read.zoo(text=getURL("https://raw.githubusercontent.com/perfeci/printing-press-data/master/av/data/success/a.csv?token=AY-o9eyFSA4owC5dBf7o9TGUZS10KZLJks5avDBdwA%3D%3D"), header = TRUE, sep = ",", FUN = toDate)
+dataCSV <- read.zoo(text=getURL(paste("https://raw.githubusercontent.com/JoeOD/miranda-data/master/success3/", tickerToTest, ".csv", sep = "")), header = TRUE, sep = ",", FUN = toDate)
 desired_range <- as.xts(dataCSV)[date_range]
 colnames(desired_range)[4] <- "Price"
 tickerToTest <- paste(tickerToTest, "_stock", sep = "")
