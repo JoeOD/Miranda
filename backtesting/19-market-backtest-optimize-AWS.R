@@ -25,7 +25,7 @@ listcsv <- as.character(listcsv[,2])
 
 for (i in 1:length(listcsv)) { 
 
-  ticker <- gsub("^\\s+|\\s+$", "", listcsv[1])
+  ticker <- gsub("^\\s+|\\s+$", "", listcsv[i])
   ticker <- gsub(".csv", "", ticker)
   #sector <- find_sector(paste(paste('\'', toupper(ticker), sep=''), '\'', sep=''))
   to_name <- gsub(".csv", "", listcsv)
