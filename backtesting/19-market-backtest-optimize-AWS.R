@@ -20,8 +20,9 @@ df_amex <- read.csv(text=getURL("https://raw.githubusercontent.com/JoeOD/miranda
 df_nasdaq <- read.csv(text=getURL("https://raw.githubusercontent.com/JoeOD/miranda-data/master/temp/nasdaq.csv"), skip=7, header=T)
 df_nyse <- read.csv(text=getURL("https://raw.githubusercontent.com/JoeOD/miranda-data/master/temp/nyse.csv"), skip=7, header=T)
 
-listcsv <- source_data("https://github.com/JoeOD/miranda-data/blob/master/listcsv1.csv?raw=true")
-listcsv <- as.character(listcsv[,2])
+#listcsv <- source_data("https://github.com/JoeOD/miranda-data/blob/master/listcsv1.csv?raw=true")
+#listcsv <- as.character(listcsv[,2])
+listcsv <- source_data("https://github.com/JoeOD/miranda-data/blob/master/alltickers.RData?raw=true")
 
 for (i in 1:length(listcsv)) { 
 
